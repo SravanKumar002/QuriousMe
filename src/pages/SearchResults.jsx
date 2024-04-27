@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import StarRatings from "react-star-ratings";
 import search from "../assets/icons/search.svg";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const suggested = [
   "figma",
@@ -62,6 +63,7 @@ class SearchResult extends Component {
     const searchResults = usersDetailsList.filter((eachUser) =>
       eachUser.name.includes(searchInput)
     );
+
     return (
       <>
         <div>
@@ -95,35 +97,39 @@ class SearchResult extends Component {
             </div>
           </div>
           <div className="grid grid-cols-4 mx-7 gap-10">
-            {searchResults.map((i) => (
-              <div key={i}>
-                <img src={i.image} className="" alt="" />
-                <div className="flex gap-3 items-center">
-                  <img
-                    src={i.profilePic}
-                    className="h-10 rounded-full my-2"
-                    alt=""
-                  />
-                  <p className="font-semibold">{i.name}</p>
-                </div>
-                <p>{i.desc}</p>
-                <p className="text-sm text-red-500 font-sans">{i.expertise}</p>
-                <div className="flex gap-3 items-center">
-                  <StarRatings
-                    rating={i.rating}
-                    numberOfStars={5}
-                    starRatedColor="#FFC107"
-                    starDimension="15px"
-                    starSpacing="3px"
-                  />
-                  <p className="relative top-0.5 text-[#FFC107] font-semibold">
-                    exp ({i.experience})
+            {searchResults.map((user) => (
+              <Link to="/profile" key={user.name}>
+                <div>
+                  <img src={user.image} className="" alt="" />
+                  <div className="flex gap-3 items-center">
+                    <img
+                      src={user.profilePic}
+                      className="h-10 rounded-full my-2"
+                      alt=""
+                    />
+                    <p className="font-semibold">{user.name}</p>
+                  </div>
+                  <p>{user.desc}</p>
+                  <p className="text-sm text-red-500 font-sans">
+                    {user.expertise}
+                  </p>
+                  <div className="flex gap-3 items-center">
+                    <StarRatings
+                      rating={user.rating}
+                      numberOfStars={5}
+                      starRatedColor="#FFC107"
+                      starDimension="15px"
+                      starSpacing="3px"
+                    />
+                    <p className="relative top-0.5 text-[#FFC107] font-semibold">
+                      exp ({user.experience})
+                    </p>
+                  </div>
+                  <p className="text-lg font-semibold">
+                    Price ₹ {user.startPrice} /-
                   </p>
                 </div>
-                <p className="text-lg font-semibold">
-                  Price ₹ {i.startPrice} /-
-                </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
