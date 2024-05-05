@@ -32,7 +32,7 @@ class SearchResult extends Component {
   getdetails = async () => {
     try {
       const res = await axios.get(
-        `https://backend-1h98.onrender.com/api/technical-experts`
+        `https://backend-1h98.onrender.com/api/expertDetails`
       );
 
       if (res.status === 200) {
@@ -47,8 +47,9 @@ class SearchResult extends Component {
           avgWaitingTime: eachOne.avg_waiting_time,
           rating: eachOne.rating,
           startPrice: eachOne.startprice,
+          id: eachOne.id,
         }));
-
+        console.log(updatedDetails);
         this.setState({
           usersDetailsList: updatedDetails,
         });
@@ -98,7 +99,7 @@ class SearchResult extends Component {
           </div>
           <div className="grid grid-cols-4 mx-7 gap-10">
             {searchResults.map((user) => (
-              <Link to="/profile" key={user.name}>
+              <Link to={`/profile/${user.id}`} key={user.name}>
                 <div>
                   <img src={user.image} className="" alt="" />
                   <div className="flex gap-3 items-center">

@@ -17,7 +17,9 @@ export default function NavBar() {
           <p>Explore</p>
           <img src={dropdown} alt="" className="h-2" />
         </div>
-        <p>Become a Seller</p>
+        <NavLink to="/devdetails">
+          <p>Become a Seller</p>
+        </NavLink>
         <div className="bg-gradient-to-r p-[3px] rounded-md from-yellow-300 to-white">
           <NavLink to="/login">
             <button className="px-3 py-1 bg-[#0D1717] rounded-md">

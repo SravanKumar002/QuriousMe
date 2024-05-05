@@ -17,6 +17,10 @@ import HomePage from "./pages/HomePage";
 import SearchResults from "./pages/SearchResults";
 import Profile from "./pages/Profile";
 import Devdetails from "./pages/devdetails";
+import Detailspg1 from "./pages/Detailspg1";
+import Detailspg2 from "./pages/Detailspag2";
+import Detailspg3 from "./pages/Detailpg3";
+import Detailspg4 from "./pages/Detailspg4";
 
 export default function App() {
   return (
@@ -43,8 +47,12 @@ export default function App() {
           <Route path="/complexqueries" element={<Queries />} />
           <Route path="/popularservices" element={<PopularServices />} />
           <Route path="/searchresults" element={<SearchResults />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/:id" element={<Profile />} />
           <Route path="/devdetails" element={<Devdetails />} />
+          <Route path="/detailspg1" element={<Detailspg1 />} />
+          <Route path="/detailspg2" element={<Detailspg2 />} />
+          <Route path="/detailspg3" element={<Detailspg3 />} />
+          <Route path="/detailspg4" element={<Detailspg4 />} />
         </Routes>
       </div>
     </div>
