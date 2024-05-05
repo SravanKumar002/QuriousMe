@@ -32,7 +32,7 @@ class SearchResult extends Component {
   getdetails = async () => {
     try {
       const res = await axios.get(
-        `https://backend-1h98.onrender.com/api/expertDetails`
+        `https://backend-1h98.onrender.com/api/expertCards`
       );
 
       if (res.status === 200) {
