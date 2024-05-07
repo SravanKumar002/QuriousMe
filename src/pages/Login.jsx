@@ -12,9 +12,8 @@ import fb from "../assets/icons/fb.svg";
 import apple from "../assets/icons/apple.svg";
 // import {useNavigate} from 'react-router-dom';
 
-
 // export default function Login() {
-//   const [error, setError] = useState(null); 
+//   const [error, setError] = useState(null);
 //   const navigator = useNavigate();
 
 //   const googleSignIn = async () => {
@@ -34,7 +33,7 @@ import apple from "../assets/icons/apple.svg";
 //         alert(`Welcome Back, ${userName}!`);
 //         navigator("/Success", {state: {user: result.user}});
 //       }
-  
+
 //     } catch (err) {
 //       setError(err.message);
 //       console.error("Error during Google sign-in:", err);
@@ -86,7 +85,6 @@ import apple from "../assets/icons/apple.svg";
 //   );
 // }
 
-
 // import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -119,41 +117,45 @@ export default function Login() {
   };
 
   return (
-    <div className="p-10 w-full px-[40px] flex justify-center">
-      <div className="flex rounded-3xl bg-white">
-        <div>
-          <img src={loginImg} className="h-[550px]" alt="" />
+    <div className="p-10 w-full px-4 lg:px-0 flex justify-center">
+      <div className="flex flex-col lg:flex-row rounded-3xl bg-white mt-7">
+        <div className="flex-shrink-0 w-full lg:w-auto">
+          <img
+            src={loginImg}
+            className="w-full h-[250px] lg:h-[550px]"
+            alt=""
+          />
         </div>
-        <div className="text-black p-16">
-          <h1>
+        <div className="text-black p-6 lg:p-16">
+          <h1 className="text-lg lg:text-2xl">
             <span className="font-bold">Login </span>to Your Account here !!
           </h1>
-          <div className="my-10 flex flex-col gap-5 text-white">
+          <div className="my-6 lg:my-10 flex flex-col gap-3 lg:gap-5 text-white">
             <button
-              className="bg-[#2D2D2D] lightShadow flex items-center gap-10 px-10 py-2 rounded-lg"
+              className="bg-[#2D2D2D] lightShadow flex items-center gap-3 px-6 py-2 rounded-lg"
               onClick={googleSignIn}
             >
               <img src={google} alt="" className="h-5" />
               Continue with Google
             </button>
-            <button className="bg-[#2D2D2D] lightShadow rounded-lg flex items-center gap-10 px-10 py-2">
+            <button className="bg-[#2D2D2D] lightShadow rounded-lg flex items-center gap-3 px-6 py-2">
               <img src={linkedin} alt="" className="h-5" />
               Continue with LinkedIn
             </button>
           </div>
           <p className="text-center">or</p>
-          <div className="flex gap-10 w-full justify-center my-5">
-            <button className="flex items-center gap-2 w-36 h-12 justify-center rounded-xl bg-[#E7E7E7] lightShadow">
+          <div className="flex flex-col lg:flex-row gap-5 lg:gap-10 justify-center my-5">
+            <button className="flex items-center gap-2 justify-center rounded-xl bg-[#E7E7E7] lightShadow px-6 py-2 lg:w-36">
               <img className="h-6" src={apple} alt="" /> Apple
             </button>
-            <button className="flex lightShadow items-center gap-2 bg-[#E7E7E7] w-36 justify-center rounded-xl h-12 ">
+            <button className="flex lightShadow items-center gap-2 bg-[#E7E7E7] justify-center rounded-xl px-6 py-2 lg:w-36">
               <img src={fb} className="h-6" alt="" /> Facebook
             </button>
           </div>
-          <div className="mt-16 text-center flex justify-center items-center gap-3">
+          <div className="mt-10 lg:mt-16 text-center flex justify-center items-center gap-3">
             <p>Are you new here??</p>
             <div className="bg-gradient-to-r p-[2px] rounded-md from-yellow-300 to-black">
-              <a href="#" className="bg-white px-3 py-[1px] rounded-[4px]">
+              <a href="#" className="bg-white px-3 py-1 rounded-md">
                 SIGN UP
               </a>
             </div>

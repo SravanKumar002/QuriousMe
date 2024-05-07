@@ -31,7 +31,7 @@ function Detailspg4() {
         </button>
         <button
           className="bg-white text-black px-3 py-2"
-          onClick={() => navigate("/detailspg3")}
+          onClick={() => navigate("/detailspg5")}
         >
           Next
         </button>

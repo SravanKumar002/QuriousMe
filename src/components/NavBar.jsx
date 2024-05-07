@@ -6,13 +6,13 @@ export default function NavBar() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex px-[80px] justify-between items-center">
+    <div className="flex px-4 md:px-8 lg:px-16 justify-between items-center">
       <div>
-        <h1 className="font-k2d font-bold text-3xl">
+        <h1 className="font-k2d font-bold text-2xl md:text-3xl">
           <a href="/">QuriosMe.</a>
         </h1>
       </div>
-      <div className="flex justify-between gap-14 items-center text-[20px]">
+      <div className="hidden md:flex justify-between gap-6 items-center text-sm md:text-base">
         <div className="flex items-center gap-2">
           <p>Explore</p>
           <img src={dropdown} alt="" className="h-2" />
@@ -22,23 +22,27 @@ export default function NavBar() {
         </NavLink>
         <div className="bg-gradient-to-r p-[3px] rounded-md from-yellow-300 to-white">
           <NavLink to="/login">
-            <button className="px-3 py-1 bg-[#0D1717] rounded-md">
+            <button className="px-3 py-1 bg-[#0D1717] rounded-md text-xs md:text-sm">
               Sign in
             </button>
           </NavLink>
         </div>
-
         <div
           onClick={() => {
             navigate("/searchresults");
           }}
+          className="hidden md:block"
         >
           <img
             src="https://t3.ftcdn.net/jpg/06/50/24/56/360_F_650245616_WUPkDzObkPLVyegasDCeNhQXvFVVJoKn.jpg"
             alt=""
-            className="h-16 rounded-full w-16 object-cover"
+            className="h-12 w-12 rounded-full object-cover"
           />
         </div>
+      </div>
+      {/* Mobile Menu Icon */}
+      <div className="md:hidden">
+        <img src={dropdown} alt="" className="h-6 w-6" />
       </div>
     </div>
   );

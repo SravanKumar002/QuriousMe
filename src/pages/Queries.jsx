@@ -51,7 +51,7 @@ export default function Queries() {
   return (
     <div className="mx-[50px] mt-[40px]">
       <h1 className="text-2xl font-semibold mb-10">
-        <FancyText gradient={{ from: "white", to: "yellow", type: "linear" }}>
+        <FancyText gradient={{ from: "black", to: "black", type: "linear" }}>
           Complex queries solved on QuriosMe.
         </FancyText>
       </h1>

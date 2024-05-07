@@ -77,15 +77,14 @@ export default function Services({ color }) {
           </span>
         </h1>
       </div>
-
-      <div className="mx-[60px] grid grid-cols-5 gap-20 my-16">
+      <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 my-16 sm:mx-[60px]">
         {data.map((e, i) => (
           <div
             key={i}
             className="cursor-pointer flex items-center flex-col justify-center gap-6"
           >
-            <img src={e.img} alt="" className="h-[40%]" />
-            <p className="text-center text-nowrap">{e.name}</p>
+            <img src={e.img} alt="" className="h-[40%] w-auto max-w-[100px]" />
+            <p className="text-center whitespace-nowrap">{e.name}</p>
           </div>
         ))}
       </div>

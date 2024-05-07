@@ -1,10 +1,9 @@
+import { useState, useEffect } from "react";
 import web from "../assets/images/popularServices/web.svg";
 import content from "../assets/images/popularServices/content.svg";
 import graphic from "../assets/images/popularServices/graphic.svg";
 import logo from "../assets/images/popularServices/logo.svg";
 import video from "../assets/images/popularServices/videoEditing.svg";
-// import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
@@ -47,11 +46,35 @@ const data = [
   },
 ];
 
-// ... (your imports)
-
 export default function PopularServices({ color }) {
+  const [slidesPerView, setSlidesPerView] = useState(1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1280) {
+        setSlidesPerView(5);
+      } else if (window.innerWidth >= 1024) {
+        setSlidesPerView(4);
+      } else if (window.innerWidth >= 768) {
+        setSlidesPerView(3);
+      } else if (window.innerWidth >= 640) {
+        setSlidesPerView(2);
+      } else {
+        setSlidesPerView(1);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div className="mt-[14] overflow-x-hidden h-[500px]">
+    <div className="mt-[14] overflow-x-hidden">
       <h1
         className={
           color === "white"
@@ -68,25 +91,22 @@ export default function PopularServices({ color }) {
           Qurios-ities based on topics
         </span>
       </h1>
-      <div className="pt-10 ">
-        <div className="bg-[#ffffff39] h-[350px] px-[40px]">
+      <div className="pt-10">
+        <div className="bg-[#ffffff39] px-4 sm:px-8">
           <Swiper
-            slidesPerView={5}
+            slidesPerView={slidesPerView}
             spaceBetween={0}
             navigation={true}
             modules={[Navigation]}
             loop={true}
-            className="mySwiper px-8"
-            style={{ overflow: "visible" }} // Add overflow: visible to the Swiper container
+            className="mySwiper"
           >
             {data.map((e, i) => (
               <SwiperSlide key={i}>
                 <div className="flex py-4 flex-col gap-8 items-center relative">
-                  {" "}
-                  {/* Use relative positioning */}
                   <img
                     src={e.img}
-                    className="h-[320px] moveup-highlight " // Use absolute positioning
+                    className="h-[320px] w-full moveup-highlight"
                     alt=""
                   />
                   <p className={color === "white" ? "text-black" : "text-xl"}>

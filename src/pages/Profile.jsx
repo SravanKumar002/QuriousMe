@@ -13,7 +13,7 @@ class Profile extends React.Component {
 
   getJobDetails = async () => {
     // const { match } = this.props;
-    console.log(this.props.match.params.id);
+    console.log(this.props);
     // const { params } = match;
     // const { id } = params;
 

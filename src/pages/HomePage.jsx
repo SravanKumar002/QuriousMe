@@ -18,6 +18,7 @@ import Services from "./Services";
 import "swiper/css";
 import "swiper/css/navigation";
 import Footer from "./Footer";
+import Queries from "./Queries";
 
 const data = [
   {
@@ -57,12 +58,12 @@ const data = [
 export default function HomePage() {
   return (
     <div className="">
-      <section className="flex justify-center items-center">
-        <div className="flex w-[500px] mb-32 flex-col items-center gap-1 justify-center">
-          <h1 className="text-4xl text-nowrap mt-32 font-bold text-yellow-300">
+      <section className="flex justify-center items-center flex-col md:flex-row">
+        <div className="flex w-full md:w-[500px] mb-8 md:mb-32 flex-col items-center gap-1 justify-center">
+          <h1 className="text-xl md:text-4xl text-nowrap mt-8 md:mt-32 font-bold text-yellow-300 text-center">
             What are you Qurios about today?
           </h1>
-          <p className="flex gap-2 text-3xl  text-nowrap font-semibold">
+          <p className="flex gap-2 text-sm md:text-3xl text-nowrap font-semibold text-center">
             Get help in any field you are{" "}
             <span>
               <Typewriter
@@ -79,7 +80,7 @@ export default function HomePage() {
               />
             </span>
           </p>
-          <div className="flex items-center my-4 w-[750px] bg-[#D9D9D9] rounded-full px-2 py-1">
+          <div className="flex items-center my-4 w-[90%] md:w-[750px] bg-[#D9D9D9] rounded-full px-2 py-1">
             <input
               type="text"
               placeholder="search for the query"
@@ -89,9 +90,9 @@ export default function HomePage() {
               <img src={search} className="relative h-8 w-8 top-1" alt="" />
             </div>
           </div>
-          <div className="flex w-[700px] ml-1 items-center gap-2 text-base">
+          <div className="flex w-[90%] md:w-[700px] ml-0 md:ml-1 items-center gap-2 text-base justify-center">
             <p className="text-nowrap">Widely asked:</p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 flex-wrap">
               {[
                 "Photoshop",
                 "Video Editing",
@@ -114,39 +115,42 @@ export default function HomePage() {
         <section className="h-screen flex justify-center items-center">
           <PopularServices color={"white"} />
         </section>
-        <section className="h-screen flex justify-center items-center">
-          <PopularServices color={"white"} />
+        <section>
+          <Queries />
         </section>
-        <section className="bg-[#E8F4F4] text-black my-10 h-screen">
-          <div className="flex items-center justify-center flex-col mx-32 pt-20">
-            <h1 className="text-3xl mb-10">
+        <section className="bg-[#E8F4F4] text-black my-10 min-h-[80vh]">
+          <div className="flex items-center justify-center flex-col mx-4 md:mx-8 lg:mx-32 pt-8 md:pt-16 lg:pt-20">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl mb-8 md:mb-10">
               The <span className="font-bold">Best</span> Part about{" "}
               <span className="font-bold">QuriousMe?</span>
             </h1>
-            <div className="my-7 text-lg">
-              <h2 className="text-xl font-semibold">Lorem ipsum dolor</h2>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod
-                provident eveniet perspiciatis dignissimos possimus tenetur illo
-                obcaecati amet rerum sapiente quas aliquam officiis facilis ut,
-                culpa doloribus unde at saepe.
-              </p>
-            </div>
-            <div className="my-7">
-              <h2 className="text-xl font-semibold">Lorem ipsum dolor</h2>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod
-                provident eveniet perspiciatis dignissimos possimus tenetur illo
-                obcaecati amet rerum sapiente quas aliquam officiis facilis ut,
-                culpa doloribus unde at saepe.
-              </p>
-            </div>
-            <div className="my-7">
-              <h2 className="text-xl font-semibold">
-                {/* <img src={Union} /> */}
+            <div className="my-4 md:my-6">
+              <h2 className="text-lg md:text-xl font-semibold mb-2">
                 Lorem ipsum dolor
               </h2>
-              <p>
+              <p className="text-sm md:text-base">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod
+                provident eveniet perspiciatis dignissimos possimus tenetur illo
+                obcaecati amet rerum sapiente quas aliquam officiis facilis ut,
+                culpa doloribus unde at saepe.
+              </p>
+            </div>
+            <div className="my-4 md:my-6">
+              <h2 className="text-lg md:text-xl font-semibold mb-2">
+                Lorem ipsum dolor
+              </h2>
+              <p className="text-sm md:text-base">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod
+                provident eveniet perspiciatis dignissimos possimus tenetur illo
+                obcaecati amet rerum sapiente quas aliquam officiis facilis ut,
+                culpa doloribus unde at saepe.
+              </p>
+            </div>
+            <div className="my-4 md:my-6">
+              <h2 className="text-lg md:text-xl font-semibold mb-2">
+                Lorem ipsum dolor
+              </h2>
+              <p className="text-sm md:text-base">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod
                 provident eveniet perspiciatis dignissimos possimus tenetur illo
                 obcaecati amet rerum sapiente quas aliquam officiis facilis ut,
@@ -155,7 +159,8 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        <section className="h-screen">
+
+        <section className="h-[80vh]">
           <Services color={"white"} />
         </section>
       </div>
