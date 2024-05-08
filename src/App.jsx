@@ -23,6 +23,7 @@ import Detailspg3 from "./pages/Detailpg3";
 import Detailspg4 from "./pages/Detailspg4";
 import Detailspg5 from "./pages/Detailspg5";
 import Detailspg6 from "./pages/Detailspg6";
+import Detailspg7 from "./pages/Detailspg7";
 
 export default function App() {
   return (
@@ -57,6 +58,7 @@ export default function App() {
           <Route path="/detailspg4" element={<Detailspg4 />} />
           <Route path="/detailspg5" element={<Detailspg5 />} />
           <Route path="/detailspg6" element={<Detailspg6 />} />
+          <Route path="/detailspg7" element={<Detailspg7 />} />
         </Routes>
       </div>
     </div>

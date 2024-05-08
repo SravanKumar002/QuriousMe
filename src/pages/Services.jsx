@@ -1,56 +1,58 @@
 import React from "react";
 import FancyText from "@carefully-coded/react-text-gradient";
-import DM from "../assets/icons/services/DM.svg";
-import DM1 from "../assets/icons/services/DM1.svg";
-import GD from "../assets/icons/services/GD.svg";
-import graphicDesign from "../assets/icons/services/graphicsDesign.svg";
-import Group9 from "../assets/icons/services/Group 9.svg";
-import Group11 from "../assets/icons/services/Group 11.svg";
-import music from "../assets/icons/services/music.svg";
-import VA from "../assets/icons/services/VA.svg";
-import VA1 from "../assets/icons/services/VA1.svg";
-import WT from "../assets/icons/services/WT.svg";
+
+// Importing images
+import a from "../assets/icons/services/a.png";
+import b from "../assets/icons/services/b.png";
+import c from "../assets/icons/services/c.png";
+import d from "../assets/icons/services/d.png";
+import e from "../assets/icons/services/e.png";
+import f from "../assets/icons/services/f.png";
+import g from "../assets/icons/services/g.png";
+import h from "../assets/icons/services/h.png";
+import i from "../assets/icons/services/i.png";
+import j from "../assets/icons/services/j.png";
 
 const data = [
   {
     name: "Graphic Design",
-    img: graphicDesign,
+    img: a,
   },
   {
     name: "Digital Marketing",
-    img: DM,
+    img: b,
   },
   {
     name: "Writing and Translating",
-    img: WT,
+    img: c,
   },
   {
     name: "Video and Animation",
-    img: VA,
+    img: d,
   },
   {
     name: "Music and Audio",
-    img: music,
+    img: e,
   },
   {
     name: "Graphic Design",
-    img: graphicDesign,
+    img: f,
   },
   {
     name: "Digital Marketing",
-    img: DM,
+    img: g,
   },
   {
     name: "Writing and Translating",
-    img: WT,
+    img: h,
   },
   {
     name: "Video and Animation",
-    img: VA,
+    img: i,
   },
   {
     name: "Music and Audio",
-    img: music,
+    img: j,
   },
 ];
 
@@ -58,11 +60,11 @@ export default function Services({ color }) {
   return (
     <div
       className={
-        color === "white" ? "mx-[100px] my-20 text-black" : "mx-[100px] my-20"
+        color === "white" ? "mx-auto my-10 text-black" : "mx-auto my-10"
       }
     >
       <div>
-        <h1 className="text-3xl font-semibold">
+        <h1 className="text-3xl font-semibold text-center">
           {color !== "white" ? (
             <FancyText
               gradient={{ from: "yellow", to: "white", type: "linear" }}
@@ -72,18 +74,22 @@ export default function Services({ color }) {
           ) : (
             <p>Qurios about something ?</p>
           )}
-          <span className="font-medium">
+          <span className="block text-center font-medium">
             Feel free to reach out, we’re here to help !!
           </span>
         </h1>
       </div>
-      <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 my-16 sm:mx-[60px]">
+      <div className="mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 my-8 sm:mx-4">
         {data.map((e, i) => (
           <div
             key={i}
-            className="cursor-pointer flex items-center flex-col justify-center gap-6"
+            className="cursor-pointer mt-6 flex items-center flex-col justify-center gap-6"
           >
-            <img src={e.img} alt="" className="h-[40%] w-auto max-w-[100px]" />
+            <img
+              src={e.img}
+              alt=""
+              className="h-auto w-[60px] lg:w-[80px] max-h-[80px]"
+            />
             <p className="text-center whitespace-nowrap">{e.name}</p>
           </div>
         ))}

@@ -26,7 +26,7 @@ const data = [
     img: marketing,
   },
   {
-    name: "Content Creationg",
+    name: "Content Creation",
     img: CC,
   },
   {
@@ -42,7 +42,7 @@ const data = [
     img: marketing,
   },
   {
-    name: "Content Creationg",
+    name: "Content Creation",
     img: CC,
   },
 ];
@@ -65,6 +65,19 @@ export default function Queries() {
             modules={[Navigation]}
             loop={true}
             className="mySwiper px-20 overflow-hidden"
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+              },
+
+              480: {
+                slidesPerView: 2,
+              },
+
+              768: {
+                slidesPerView: 4,
+              },
+            }}
           >
             {data.map((e, i) => (
               <SwiperSlide key={i}>

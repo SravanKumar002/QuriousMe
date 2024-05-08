@@ -115,7 +115,7 @@ export default function HomePage() {
         <section className="h-screen flex justify-center items-center">
           <PopularServices color={"white"} />
         </section>
-        <section>
+        <section className="h-[80vh]">
           <Queries />
         </section>
         <section className="bg-[#E8F4F4] text-black my-10 min-h-[80vh]">
@@ -160,8 +160,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="h-[80vh]">
-          <Services color={"white"} />
+        <section className="h-[100vh] lg:h-screen flex justify-center items-center">
+          <div className="max-w-screen-lg w-full">
+            <Services color={"white"} />
+          </div>
         </section>
       </div>
       <section className="h-screen bg-none">

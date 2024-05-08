@@ -82,7 +82,7 @@ function Detailspg5() {
         <div className="flex justify-center lg:justify-end mt-6 m-6">
           <button
             className="bg-white text-black px-3 py-2"
-            onClick={() => navigate("/detailspg6")}
+            onClick={() => navigate("/detailspg7")}
           >
             Skip
           </button>
