@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 class Detailspg7 extends Component {
   constructor(props) {
@@ -416,9 +416,12 @@ class Detailspg7 extends Component {
             />
           </div>
           <div className="flex justify-center lg:justify-end mt-6 m-6">
-            <Link to="/detailspg6">
-              <button className="bg-white text-black px-3 py-2">Next</button>
-            </Link>
+            <button
+              className="bg-white text-black px-3 py-2"
+              onClick={() => navigate("/detailspg6")}
+            >
+              Next
+            </button>
           </div>
         </div>
       </div>
