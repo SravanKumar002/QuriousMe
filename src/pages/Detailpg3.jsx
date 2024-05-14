@@ -6,7 +6,7 @@ import image8 from "../assets/detailscart/image8.png";
 import image9 from "../assets/detailscart/image9.png";
 import image10 from "../assets/detailscart/image10.png";
 
-function Detailspg2() {
+function Detailspg3() {
   const navigate = useNavigate();
 
   return (
@@ -56,4 +56,4 @@ function Card({ image, title }) {
   );
 }
 
-export default Detailspg2;
+export default Detailspg3;
